@@ -4,9 +4,9 @@
 
 ![mac128](Images/mac128.png)
 
-This is the starter project for the video the containerRelativeFrame view modifier
+This is the Completed source code for the video the containerRelativeFrame view modifier
 
-The completed project is in the **CompletedProject Branch**
+
 
 If you want to support my work, you can - </br>
 
