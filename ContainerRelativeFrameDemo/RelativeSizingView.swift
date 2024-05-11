@@ -16,8 +16,24 @@ struct RelativeSizingView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var body: some View {
+//        Color.red
+//            .frame(width: screenWidth / 2, height: screenHeight / 2)
+//        GeometryReader { proxy in
+//            Color.red
+//                .frame(width: proxy.size.width / 2, height: proxy.size.height / 2)
+//        }
+//        Color.red
+//            .containerRelativeFrame([.horizontal, .vertical]) { dimension, _ in
+//                dimension / 2
+//            }
         Color.red
-            .frame(width: screenWidth / 2, height: screenHeight / 2)
+            .containerRelativeFrame([.horizontal, .vertical]) { dimension, axis in
+                if axis == .horizontal {
+                    dimension * 2 / 3
+                } else {
+                    dimension / 2
+                }
+            }
     }
 }
 

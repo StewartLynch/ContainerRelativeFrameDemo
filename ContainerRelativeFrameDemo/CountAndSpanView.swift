@@ -19,6 +19,9 @@ struct CountAndSpanView: View {
             LazyHStack {
                 ForEach(colors, id: \.self) { color in
                     color
+//                        .containerRelativeFrame(.horizontal)
+                        .aspectRatio(3 / 2, contentMode: .fit)
+                        .containerRelativeFrame(.horizontal, count: 4, span: 3,  spacing: 10.0)
                 }
             }
         }

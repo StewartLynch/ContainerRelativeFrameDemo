@@ -14,8 +14,13 @@ import SwiftUI
 
 struct BasicsView: View {
     var body: some View {
-            Color.red
-                .frame(width: 200, height: 300)
+            TabView {
+                Color.red
+                    .frame(width: 200, height: 300)
+                    .containerRelativeFrame([.horizontal, .vertical], alignment: .topLeading)
+            }
+            .frame(width: 300, height: 400)
+            .border(.green)
     }
 }
 

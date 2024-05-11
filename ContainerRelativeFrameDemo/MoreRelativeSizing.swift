@@ -16,13 +16,21 @@ struct MoreRelativeSizing: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let ratio = 0.33333
     var body: some View {
-        HStack(spacing: 0) {
-            Color.green
-                .frame(width: screenWidth * ratio)
-            Color.blue
+        ScrollView(.horizontal){
+            HStack(spacing: 0) {
+                Color.green
+                    .containerRelativeFrame(.horizontal) { dimension, _ in
+                        dimension * ratio
+                    }
+                Color.blue
+                    .containerRelativeFrame(.horizontal) { dimension, _ in
+                        dimension * (1 - ratio)
+                    }
+            }
         }
         .padding()
         .frame(height: 150)
+        .scrollDisabled(true)
     }
 }
 

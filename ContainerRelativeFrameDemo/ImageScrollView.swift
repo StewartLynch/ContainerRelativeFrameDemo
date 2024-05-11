@@ -14,7 +14,17 @@ import SwiftUI
 
 struct ImageScrollView: View {
     var body: some View {
-        Text("Image Scroll View")
+        ScrollView(.horizontal) {
+            LazyHStack {
+                ForEach(1..<10, id: \.self) { index in
+                    Image("image\(index)")
+                       .resizable()
+                        .aspectRatio(3 / 2, contentMode: .fit)
+                        .containerRelativeFrame(.horizontal, count: 4, span: 3,  spacing: 10.0)
+                }
+            }
+        }
+        .frame(height: 300)
     }
 }
 
