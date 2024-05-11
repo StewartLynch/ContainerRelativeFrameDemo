@@ -12,11 +12,20 @@
 
 import SwiftUI
 
-@main
-struct ContainerRelativeFrameDemoApp: App {
-    var body: some Scene {
-        WindowGroup {
-            BasicsView()
+struct CountAndSpanView: View {
+    var colors: [Color] = [.red, .green, .yellow, .blue, .cyan, .purple]
+    var body: some View {
+        ScrollView(.horizontal) {
+            LazyHStack {
+                ForEach(colors, id: \.self) { color in
+                    color
+                }
+            }
         }
+        .frame(height: 300)
     }
+}
+
+#Preview {
+    CountAndSpanView()
 }

@@ -12,11 +12,15 @@
 
 import SwiftUI
 
-@main
-struct ContainerRelativeFrameDemoApp: App {
-    var body: some Scene {
-        WindowGroup {
-            BasicsView()
-        }
+struct RelativeSizingView: View {
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
+    var body: some View {
+        Color.red
+            .frame(width: screenWidth / 2, height: screenHeight / 2)
     }
+}
+
+#Preview {
+    RelativeSizingView()
 }

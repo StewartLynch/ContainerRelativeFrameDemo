@@ -12,11 +12,13 @@
 
 import SwiftUI
 
-@main
-struct ContainerRelativeFrameDemoApp: App {
-    var body: some Scene {
-        WindowGroup {
-            BasicsView()
-        }
+struct BasicsView: View {
+    var body: some View {
+            Color.red
+                .frame(width: 200, height: 300)
     }
+}
+
+#Preview {
+    BasicsView()
 }
